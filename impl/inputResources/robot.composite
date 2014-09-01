@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<composite xmlns="http://www.osoa.org/xmlns/sca/1.0"
+	name="robotEnvironment"
+	targetNamespace="http://robotEnvironment">
+	
+  <component name="RobotComponent">
+    <implementation.java class="resources.robotEnvironment.Robot"/>
+    <property name="ID">TestRobot001</property>
+    <property name="nickname">Discovery</property>
+    <property name="weight">20</property>
+	<property name="height">50</property>
+	<property name="price">499.99</property>
+    <service name="move">
+      <interface.java interface="resources.robotEnvironment.RobotInterface"/>
+    </service>
+    <reference name="updatePosition">
+    	<interface.java interface="resources.robotEnvironment.GPSInterface"/>
+    </reference>
+  </component>
+  
+</composite>
